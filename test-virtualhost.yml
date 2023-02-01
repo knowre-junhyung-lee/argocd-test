@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: mynginx
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - nginx-gateway # book 네임 스페이스 밑에 있는 book-gateway를 사용
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: mynginx # 라우팅할 서비스
+            port:
+              number: 80
