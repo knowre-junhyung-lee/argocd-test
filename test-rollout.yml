@@ -16,7 +16,7 @@ spec:
       stableService: mynginx
       trafficRouting:
         istio:
-           virtualService: 
+          virtualService: 
             name: mynginx
             routes:
             - primary 
