@@ -3,6 +3,23 @@ kind: Rollout
 metadata:
   name: mynginx
 spec:
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: "1m"
+      - setWeight: 50
+      - pause:
+          duration: "2m"
+      canaryService: mynginx-preview
+      stableService: mynginx
+      trafficRouting:
+        istio:
+           virtualService: 
+            name: mynginx
+            routes:
+            - primary 
   replicas: 2
   selector:
     matchLabels:
@@ -24,15 +41,3 @@ spec:
         name: mynginx
         ports:
         - containerPort: 80
-  strategy:
-    canary:
-      canaryService: mynginx-preview
-      steps:
-      - setWeight: 20
-      - pause: {}
-      - setWeight: 40
-      - pause: {duration: 10}
-      - setWeight: 60
-      - pause: {duration: 10}
-      - setWeight: 80
-      - pause: {duration: 10}
