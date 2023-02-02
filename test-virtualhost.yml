@@ -7,11 +7,11 @@ spec:
   - "*"
   gateways:
   - nginx-gateway # book 네임 스페이스 밑에 있는 book-gateway를 사용
-  http:
-  - name: primary        
+  http:    
     - match:
         - uri:
             prefix: /
+    - name: primary    
       route:
         - destination:
             host: mynginx
