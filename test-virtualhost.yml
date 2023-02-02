@@ -13,6 +13,12 @@ spec:
             prefix: /
       route:
         - destination:
-            host: mynginx # 라우팅할 서비스
+            host: mynginx
             port:
               number: 80
+          weight: 100
+        - destination:
+            host: mynginx-preview
+            port:
+              number: 80
+          weight: 0
