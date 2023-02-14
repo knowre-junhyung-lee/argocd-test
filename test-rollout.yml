@@ -22,7 +22,7 @@ spec:
             routes:
             - primary 
   revisionHistoryLimit: 2
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       run: mynginx
