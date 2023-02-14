@@ -2,6 +2,7 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: mynginx
+  namespace: mynginx
 spec:
   maxReplicas: 2
   minReplicas: 1
