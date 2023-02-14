@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: mynginx
-  nemaspace: mynginx
+  namespace: mynginx
 spec:
   strategy:
     canary:
