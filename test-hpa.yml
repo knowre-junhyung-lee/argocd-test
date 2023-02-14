@@ -1,17 +1,12 @@
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: mynginx
-  namespace: default
 spec:
+  maxReplicas: 2
+  minReplicas: 1
   scaleTargetRef:
-    apiVersion: apps/v1
+    apiVersion: argoproj.io/v1alpha1
     kind: Rollout
     name: mynginx
-  minReplicas: 1
-  maxReplicas: 2
-  metrics: 
-    - type: Resource
-      resource:
-        name: cpu
-        targetAverageUtilization: 30
+  targetCPUUtilizationPercentage: 30
