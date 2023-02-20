@@ -8,7 +8,7 @@ metadata:
 #     - resources-finalizer.argocd.argoproj.io
 
 spec:
-  project: apps
+  project: default
   
   source:
     repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
