@@ -14,6 +14,9 @@ spec:
     repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
     targetRevision: HEAD
     path: charts/mynginx
+    helm:
+      valueFiles:
+      - values.yaml
   
   destination:
     server: https://kubernetes.default.svc

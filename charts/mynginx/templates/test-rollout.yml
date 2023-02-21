@@ -32,7 +32,7 @@ spec:
         run: mynginx
     spec:
       containers:
-      - image: nginx:latest
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}
         resources:
           requests:
             memory: "128Mi"
