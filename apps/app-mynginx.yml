@@ -14,6 +14,9 @@ spec:
     repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
     targetRevision: HEAD
     path: charts/mynginx
+    helm:
+      valueFiles:
+      - values.yaml
   
   destination:
     server: https://kubernetes.default.svc
@@ -24,5 +27,5 @@ spec:
       prune: true 
       selfHeal: true   
     # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.  
-#     syncOptions:
-#       - CreateNamespace=true   
+    syncOptions:
+      - CreateNamespace=true   
