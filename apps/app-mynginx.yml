@@ -9,7 +9,10 @@ metadata:
 
 spec:
   project: default
-  
+  source:
+    repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
+    targetRevision: HEAD
+    path: charts/mynginx  
   sources:
   - repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
     targetRevision: HEAD
