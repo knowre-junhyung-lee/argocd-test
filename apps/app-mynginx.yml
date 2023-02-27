@@ -11,7 +11,7 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
+  - repoURL: https://github.com/knowre-junhyung-lee/argocd-test.git
     targetRevision: HEAD
     path: charts/mynginx
     helm:
